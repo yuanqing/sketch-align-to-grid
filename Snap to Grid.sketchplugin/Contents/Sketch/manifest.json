@@ -1,0 +1,93 @@
+{
+  "name": "Snap to Grid",
+  "description": "A Sketch plugin to automatically arrange artboards and layers on a grid",
+  "author": "Lim Yuan Qing",
+  "homepage": "https://github.com/yuanqing/sketch-snap-to-grid",
+  "version": "0.0.0",
+  "identifier": "yuanqing.sketch-snap-to-grid",
+  "appcast": "https://raw.githubusercontent.com/yuanqing/sketch-snap-to-grid/master/appcast.xml",
+  "bundleVersion": 1,
+  "disableCocoaScriptPreprocessor": true,
+  "commands": [
+    {
+      "name": "Settings",
+      "identifier": "yuanqing.sketch-snap-to-grid.settings.settings",
+      "script": "plugin.js",
+      "handler": "settings/settings"
+    },
+    {
+      "name": "Reset Settings",
+      "identifier": "yuanqing.sketch-snap-to-grid.settings.reset-settings",
+      "script": "plugin.js",
+      "handler": "settings/reset-settings"
+    },
+    {
+      "name": "snap-to-grid",
+      "identifier": "yuanqing.sketch-snap-to-grid.snap-to-grid.layers-moved-finish",
+      "script": "plugin.js",
+      "handlers": {
+        "actions": {
+          "LayersMoved.finish": "snap-to-grid"
+        }
+      }
+    },
+    {
+      "name": "snap-to-grid",
+      "identifier": "yuanqing.sketch-snap-to-grid.snap-to-grid.layers-resized-finish",
+      "script": "plugin.js",
+      "handlers": {
+        "actions": {
+          "LayersResized.finish": "snap-to-grid"
+        }
+      }
+    },
+    {
+      "name": "snap-to-grid",
+      "identifier": "yuanqing.sketch-snap-to-grid.snap-to-grid.paste-finish",
+      "script": "plugin.js",
+      "handlers": {
+        "actions": {
+          "Paste.finish": "snap-to-grid"
+        }
+      }
+    },
+    {
+      "name": "insert-artboard",
+      "identifier": "yuanqing.sketch-snap-to-grid.insert-artboard.insert-artboard-finish",
+      "script": "plugin.js",
+      "handlers": {
+        "actions": {
+          "InsertArtboard.finish": "insert-artboard"
+        }
+      }
+    },
+    {
+      "name": "insert-artboard",
+      "identifier": "yuanqing.sketch-snap-to-grid.insert-artboard.handler-lost-focus",
+      "script": "plugin.js",
+      "handlers": {
+        "actions": {
+          "HandlerLostFocus": "insert-artboard"
+        }
+      }
+    },
+    {
+      "name": "insert-artboard",
+      "identifier": "yuanqing.sketch-snap-to-grid.insert-artboard.artboard-changed-finish",
+      "script": "plugin.js",
+      "handlers": {
+        "actions": {
+          "ArtboardChanged.finish": "insert-artboard"
+        }
+      }
+    }
+  ],
+  "menu": {
+    "title": "Snap to Grid",
+    "items": [
+      "yuanqing.sketch-snap-to-grid.settings.settings",
+      "-",
+      "yuanqing.sketch-snap-to-grid.settings.reset-settings"
+    ]
+  }
+}

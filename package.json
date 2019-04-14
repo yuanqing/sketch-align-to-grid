@@ -1,0 +1,72 @@
+{
+  "name": "sketch-snap-to-grid",
+  "version": "0.0.0",
+  "description": "A Sketch plugin to automatically arrange artboards and layers on a grid",
+  "keywords": [
+    "plugin",
+    "sketch",
+    "sketch-plugin-helper"
+  ],
+  "license": "MIT",
+  "author": "Lim Yuan Qing",
+  "repository": "yuanqing/sketch-snap-to-grid",
+  "devDependencies": {
+    "sketch-plugin-helper": "*"
+  },
+  "scripts": {
+    "build": "sph build",
+    "fix": "sph lint --fix",
+    "lint": "sph lint",
+    "symlink": "sph symlink",
+    "test": "sph test",
+    "unlink": "sph symlink --delete",
+    "version": "sph version",
+    "watch": "sph build --watch"
+  },
+  "sketch-plugin-helper": {
+    "name": "Snap to Grid",
+    "actions": [
+      {
+        "action": "LayersMoved.finish",
+        "handler": "snap-to-grid"
+      },
+      {
+        "action": "LayersResized.finish",
+        "handler": "snap-to-grid"
+      },
+      {
+        "action": "Paste.finish",
+        "handler": "snap-to-grid"
+      },
+      {
+        "action": "InsertArtboard.finish",
+        "handler": "insert-artboard"
+      },
+      {
+        "action": "HandlerLostFocus",
+        "handler": "insert-artboard"
+      },
+      {
+        "action": "ArtboardChanged.finish",
+        "handler": "insert-artboard"
+      }
+    ],
+    "menu": [
+      {
+        "handler": "settings/settings",
+        "label": "Settings"
+      },
+      "-",
+      {
+        "handler": "settings/reset-settings",
+        "label": "Reset Settings"
+      }
+    ],
+    "defaultSettings": {
+      "gridHeight": 500,
+      "gridWidth": 500,
+      "ignoreRegularExpression": "",
+      "state": 0
+    }
+  }
+}
