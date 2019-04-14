@@ -1,6 +1,6 @@
 {
   "name": "sketch-snap-to-grid",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A Sketch plugin to automatically arrange artboards and layers on a grid",
   "keywords": [
     "plugin",
