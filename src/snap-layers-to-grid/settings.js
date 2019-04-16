@@ -1,27 +1,33 @@
 import {
   openSettingsDialog,
   saveSettings,
+  CHECK_BOX,
   NUMERIC_TEXT_BOX,
   TEXT_BOX
 } from 'sketch-plugin-helper'
 
 const settingsConfig = {
-  title: 'Settings',
+  title: 'Settings for Snap Layers to Grid',
   inputs: [
     {
+      type: CHECK_BOX,
+      key: 'snapLayersToGrid.enabled',
+      label: 'Enabled'
+    },
+    {
       type: NUMERIC_TEXT_BOX,
-      key: 'gridWidth',
+      key: 'snapLayersToGrid.gridWidth',
       label: 'Grid width'
     },
     {
       type: NUMERIC_TEXT_BOX,
-      key: 'gridHeight',
+      key: 'snapLayersToGrid.gridHeight',
       label: 'Grid height'
     },
     {
       type: TEXT_BOX,
-      key: 'ignoreRegularExpression',
-      label: 'Ignore regular expression'
+      key: 'snapLayersToGrid.whitelistRegularExpression',
+      label: 'Whitelist regular expression'
     }
   ]
 }

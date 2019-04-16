@@ -10,74 +10,62 @@
   "disableCocoaScriptPreprocessor": true,
   "commands": [
     {
-      "name": "Settings",
-      "identifier": "yuanqing.sketch-snap-to-grid.settings.settings",
+      "name": "Snap Layers to Grid",
+      "identifier": "yuanqing.sketch-snap-to-grid.snap-layers-to-grid.snap-layers-to-grid",
       "script": "plugin.js",
-      "handler": "settings/settings"
+      "handler": "snap-layers-to-grid/snap-layers-to-grid"
+    },
+    {
+      "name": "Snap Artboards to Grid",
+      "identifier": "yuanqing.sketch-snap-to-grid.snap-artboards-to-grid.snap-artboards-to-grid",
+      "script": "plugin.js",
+      "handler": "snap-artboards-to-grid/snap-artboards-to-grid"
+    },
+    {
+      "name": "Settings for Snap Layers to Grid",
+      "identifier": "yuanqing.sketch-snap-to-grid.snap-layers-to-grid.settings",
+      "script": "plugin.js",
+      "handler": "snap-layers-to-grid/settings"
+    },
+    {
+      "name": "Settings for Snap Artboards to Grid",
+      "identifier": "yuanqing.sketch-snap-to-grid.snap-artboards-to-grid.settings",
+      "script": "plugin.js",
+      "handler": "snap-artboards-to-grid/settings"
     },
     {
       "name": "Reset Settings",
-      "identifier": "yuanqing.sketch-snap-to-grid.settings.reset-settings",
+      "identifier": "yuanqing.sketch-snap-to-grid.reset-settings",
       "script": "plugin.js",
-      "handler": "settings/reset-settings"
+      "handler": "reset-settings"
     },
     {
-      "name": "snap-to-grid",
-      "identifier": "yuanqing.sketch-snap-to-grid.snap-to-grid.layers-moved-finish",
+      "name": "action",
+      "identifier": "yuanqing.sketch-snap-to-grid.action.layers-moved-finish",
       "script": "plugin.js",
       "handlers": {
         "actions": {
-          "LayersMoved.finish": "snap-to-grid"
+          "LayersMoved.finish": "action"
         }
       }
     },
     {
-      "name": "snap-to-grid",
-      "identifier": "yuanqing.sketch-snap-to-grid.snap-to-grid.layers-resized-finish",
+      "name": "action",
+      "identifier": "yuanqing.sketch-snap-to-grid.action.layers-resized-finish",
       "script": "plugin.js",
       "handlers": {
         "actions": {
-          "LayersResized.finish": "snap-to-grid"
+          "LayersResized.finish": "action"
         }
       }
     },
     {
-      "name": "snap-to-grid",
-      "identifier": "yuanqing.sketch-snap-to-grid.snap-to-grid.paste-finish",
+      "name": "action",
+      "identifier": "yuanqing.sketch-snap-to-grid.action.paste-finish",
       "script": "plugin.js",
       "handlers": {
         "actions": {
-          "Paste.finish": "snap-to-grid"
-        }
-      }
-    },
-    {
-      "name": "insert-artboard",
-      "identifier": "yuanqing.sketch-snap-to-grid.insert-artboard.insert-artboard-finish",
-      "script": "plugin.js",
-      "handlers": {
-        "actions": {
-          "InsertArtboard.finish": "insert-artboard"
-        }
-      }
-    },
-    {
-      "name": "insert-artboard",
-      "identifier": "yuanqing.sketch-snap-to-grid.insert-artboard.handler-lost-focus",
-      "script": "plugin.js",
-      "handlers": {
-        "actions": {
-          "HandlerLostFocus": "insert-artboard"
-        }
-      }
-    },
-    {
-      "name": "insert-artboard",
-      "identifier": "yuanqing.sketch-snap-to-grid.insert-artboard.artboard-changed-finish",
-      "script": "plugin.js",
-      "handlers": {
-        "actions": {
-          "ArtboardChanged.finish": "insert-artboard"
+          "Paste.finish": "action"
         }
       }
     }
@@ -85,9 +73,18 @@
   "menu": {
     "title": "Snap to Grid",
     "items": [
-      "yuanqing.sketch-snap-to-grid.settings.settings",
+      "yuanqing.sketch-snap-to-grid.snap-layers-to-grid.snap-layers-to-grid",
+      "yuanqing.sketch-snap-to-grid.snap-artboards-to-grid.snap-artboards-to-grid",
       "-",
-      "yuanqing.sketch-snap-to-grid.settings.reset-settings"
+      {
+        "title": "Settings",
+        "items": [
+          "yuanqing.sketch-snap-to-grid.snap-layers-to-grid.settings",
+          "yuanqing.sketch-snap-to-grid.snap-artboards-to-grid.settings",
+          "-",
+          "yuanqing.sketch-snap-to-grid.reset-settings"
+        ]
+      }
     ]
   }
 }

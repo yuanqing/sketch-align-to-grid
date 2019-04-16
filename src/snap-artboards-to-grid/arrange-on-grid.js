@@ -1,9 +1,11 @@
+import roundDown from '../round-down'
+
 export default function createGrid ({ layers, gridWidth, gridHeight }) {
   const grid = []
   insertLayersIntoGrid({ grid, layersToInsert: layers, gridWidth, gridHeight })
   adjustYPosition({ grid, gridHeight })
   adjustXPosition({ grid, gridWidth })
-  return grid
+  updateLayerPositions(grid)
 }
 
 function insertLayersIntoGrid ({
@@ -13,11 +15,11 @@ function insertLayersIntoGrid ({
   gridHeight
 }) {
   layersToInsert.forEach(function (layerToInsert) {
-    const x = roundDownToNearestMultiple({
+    const x = roundDown({
       value: layerToInsert.frame.x,
       multiple: gridWidth
     })
-    const y = roundDownToNearestMultiple({
+    const y = roundDown({
       value: layerToInsert.frame.y,
       multiple: gridHeight
     })
@@ -80,7 +82,7 @@ function adjustYPosition ({ grid, gridHeight }) {
     const nextIndex = index + 1
     if (nextIndex < grid.length && y + maxHeight >= grid[nextIndex].y) {
       grid.slice(nextIndex).forEach(function (row) {
-        row.y = roundDownToNearestMultiple({
+        row.y = roundDown({
           value: row.y + maxHeight,
           multiple: gridHeight
         })
@@ -97,7 +99,7 @@ function adjustXPosition ({ grid, gridWidth }) {
       const layerWidth = layer.frame.width
       if (nextIndex < layers.length && x + layerWidth >= layers[nextIndex].x) {
         layers.slice(nextIndex).forEach(function (item) {
-          item.x = roundDownToNearestMultiple({
+          item.x = roundDown({
             value: item.x + layerWidth,
             multiple: gridWidth
           })
@@ -110,6 +112,11 @@ function adjustXPosition ({ grid, gridWidth }) {
   })
 }
 
-function roundDownToNearestMultiple ({ value, multiple }) {
-  return Math.floor(value / multiple) * multiple
+function updateLayerPositions (grid) {
+  grid.forEach(function ({ y, layers }) {
+    layers.forEach(function ({ x, layer }) {
+      layer.frame.x = x
+      layer.frame.y = y
+    })
+  })
 }

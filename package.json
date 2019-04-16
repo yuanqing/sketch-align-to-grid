@@ -18,7 +18,6 @@
     "fix": "sph lint --fix",
     "lint": "sph lint",
     "symlink": "sph symlink",
-    "test": "sph test",
     "unlink": "sph symlink --delete",
     "version": "sph version",
     "watch": "sph build --watch"
@@ -28,45 +27,54 @@
     "actions": [
       {
         "action": "LayersMoved.finish",
-        "handler": "snap-to-grid"
+        "handler": "action"
       },
       {
         "action": "LayersResized.finish",
-        "handler": "snap-to-grid"
+        "handler": "action"
       },
       {
         "action": "Paste.finish",
-        "handler": "snap-to-grid"
-      },
-      {
-        "action": "InsertArtboard.finish",
-        "handler": "insert-artboard"
-      },
-      {
-        "action": "HandlerLostFocus",
-        "handler": "insert-artboard"
-      },
-      {
-        "action": "ArtboardChanged.finish",
-        "handler": "insert-artboard"
+        "handler": "action"
       }
     ],
     "menu": [
       {
-        "handler": "settings/settings",
-        "label": "Settings"
+        "handler": "snap-layers-to-grid/snap-layers-to-grid",
+        "label": "Snap Layers to Grid"
+      },
+      {
+        "handler": "snap-artboards-to-grid/snap-artboards-to-grid",
+        "label": "Snap Artboards to Grid"
       },
       "-",
       {
-        "handler": "settings/reset-settings",
-        "label": "Reset Settings"
+        "Settings": [
+          {
+            "handler": "snap-layers-to-grid/settings",
+            "label": "Settings for Snap Layers to Grid"
+          },
+          {
+            "handler": "snap-artboards-to-grid/settings",
+            "label": "Settings for Snap Artboards to Grid"
+          },
+          "-",
+          {
+            "handler": "reset-settings",
+            "label": "Reset Settings"
+          }
+        ]
       }
     ],
     "defaultSettings": {
-      "gridHeight": 500,
-      "gridWidth": 500,
-      "ignoreRegularExpression": "",
-      "state": 0
+      "snapArtboardsToGrid.enabled": false,
+      "snapArtboardsToGrid.gridHeight": 200,
+      "snapArtboardsToGrid.gridWidth": 200,
+      "snapArtboardsToGrid.whitelistRegularExpression": "^@",
+      "snapLayersToGrid.enabled": false,
+      "snapLayersToGrid.gridHeight": 10,
+      "snapLayersToGrid.gridWidth": 10,
+      "snapLayersToGrid.whitelistRegularExpression": "^@"
     }
   }
 }
