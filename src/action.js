@@ -4,7 +4,7 @@ import { getSettings } from 'sketch-plugin-helper'
 import snapArtboardsToGrid from './snap-artboards-to-grid/snap-artboards-to-grid'
 import snapLayersToGrid from './snap-layers-to-grid/snap-layers-to-grid'
 
-export default function action ({actionContext}) {
+export default function action ({ actionContext }) {
   const settings = getSettings()
   const layers = collectLayersInArtboards(actionContext.layers)
   const hasArtboard = layers.length < actionContext.layers.length

@@ -1,7 +1,7 @@
 {
   "name": "sketch-snap-to-grid",
   "version": "0.0.1",
-  "description": "A Sketch plugin to automatically arrange artboards and layers on a grid",
+  "description": "A Sketch plugin to automatically align artboards and layers to a grid",
   "keywords": [
     "plugin",
     "sketch",
@@ -44,26 +44,22 @@
         "label": "Snap Layers to Grid"
       },
       {
-        "handler": "snap-artboards-to-grid/snap-artboards-to-grid",
-        "label": "Snap Artboards to Grid"
+        "handler": "snap-layers-to-grid/settings",
+        "label": "Settings for Snap Layers to Grid"
       },
       "-",
       {
-        "Settings": [
-          {
-            "handler": "snap-layers-to-grid/settings",
-            "label": "Settings for Snap Layers to Grid"
-          },
-          {
-            "handler": "snap-artboards-to-grid/settings",
-            "label": "Settings for Snap Artboards to Grid"
-          },
-          "-",
-          {
-            "handler": "reset-settings",
-            "label": "Reset Settings"
-          }
-        ]
+        "handler": "snap-artboards-to-grid/snap-artboards-to-grid",
+        "label": "Snap Artboards to Grid"
+      },
+      {
+        "handler": "snap-artboards-to-grid/settings",
+        "label": "Settings for Snap Artboards to Grid"
+      },
+      "-",
+      {
+        "handler": "reset-settings",
+        "label": "Reset Settings"
       }
     ],
     "defaultSettings": {

@@ -3,7 +3,7 @@
   <channel>
     <title>Snap to Grid</title>
     <link>https://raw.githubusercontent.com/yuanqing/sketch-snap-to-grid/master/appcast.xml</link>
-    <description>A Sketch plugin to automatically arrange artboards and layers on a grid</description>
+    <description>A Sketch plugin to automatically align artboards and layers to a grid</description>
     <language>en</language>
     <item>
       <title>v0.0.1</title>

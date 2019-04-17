@@ -1,6 +1,6 @@
 {
   "name": "Snap to Grid",
-  "description": "A Sketch plugin to automatically arrange artboards and layers on a grid",
+  "description": "A Sketch plugin to automatically align artboards and layers to a grid",
   "author": "Lim Yuan Qing",
   "homepage": "https://github.com/yuanqing/sketch-snap-to-grid",
   "version": "0.0.1",
@@ -16,16 +16,16 @@
       "handler": "snap-layers-to-grid/snap-layers-to-grid"
     },
     {
-      "name": "Snap Artboards to Grid",
-      "identifier": "yuanqing.sketch-snap-to-grid.snap-artboards-to-grid.snap-artboards-to-grid",
-      "script": "plugin.js",
-      "handler": "snap-artboards-to-grid/snap-artboards-to-grid"
-    },
-    {
       "name": "Settings for Snap Layers to Grid",
       "identifier": "yuanqing.sketch-snap-to-grid.snap-layers-to-grid.settings",
       "script": "plugin.js",
       "handler": "snap-layers-to-grid/settings"
+    },
+    {
+      "name": "Snap Artboards to Grid",
+      "identifier": "yuanqing.sketch-snap-to-grid.snap-artboards-to-grid.snap-artboards-to-grid",
+      "script": "plugin.js",
+      "handler": "snap-artboards-to-grid/snap-artboards-to-grid"
     },
     {
       "name": "Settings for Snap Artboards to Grid",
@@ -74,17 +74,12 @@
     "title": "Snap to Grid",
     "items": [
       "yuanqing.sketch-snap-to-grid.snap-layers-to-grid.snap-layers-to-grid",
-      "yuanqing.sketch-snap-to-grid.snap-artboards-to-grid.snap-artboards-to-grid",
+      "yuanqing.sketch-snap-to-grid.snap-layers-to-grid.settings",
       "-",
-      {
-        "title": "Settings",
-        "items": [
-          "yuanqing.sketch-snap-to-grid.snap-layers-to-grid.settings",
-          "yuanqing.sketch-snap-to-grid.snap-artboards-to-grid.settings",
-          "-",
-          "yuanqing.sketch-snap-to-grid.reset-settings"
-        ]
-      }
+      "yuanqing.sketch-snap-to-grid.snap-artboards-to-grid.snap-artboards-to-grid",
+      "yuanqing.sketch-snap-to-grid.snap-artboards-to-grid.settings",
+      "-",
+      "yuanqing.sketch-snap-to-grid.reset-settings"
     ]
   }
 }
