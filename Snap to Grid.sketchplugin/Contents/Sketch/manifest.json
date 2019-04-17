@@ -3,7 +3,7 @@
   "description": "A Sketch plugin to automatically align artboards and layers to a grid",
   "author": "Lim Yuan Qing",
   "homepage": "https://github.com/yuanqing/sketch-snap-to-grid",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "identifier": "yuanqing.sketch-snap-to-grid",
   "appcast": "https://raw.githubusercontent.com/yuanqing/sketch-snap-to-grid/master/appcast.xml",
   "bundleVersion": 1,
