@@ -1,4 +1,4 @@
-import { getArtboardsOnCurrentPage, getSettings } from 'sketch-plugin-helper'
+import { getArtboardsOnCurrentPage, getSettings, showSuccessMessage } from 'sketch-plugin-helper'
 
 import arrangeOnGrid from './arrange-on-grid'
 
