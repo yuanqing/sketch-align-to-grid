@@ -1,7 +1,7 @@
 {
-  "name": "sketch-snap-to-grid",
+  "name": "sketch-align-to-grid",
   "version": "0.0.2",
-  "description": "A Sketch plugin to automatically align artboards and layers to a grid",
+  "description": "A Sketch plugin to align artboards and layers to a grid",
   "keywords": [
     "plugin",
     "sketch",
@@ -9,7 +9,7 @@
   ],
   "license": "MIT",
   "author": "Lim Yuan Qing",
-  "repository": "yuanqing/sketch-snap-to-grid",
+  "repository": "yuanqing/sketch-align-to-grid",
   "devDependencies": {
     "sketch-plugin-helper": "*"
   },
@@ -23,7 +23,7 @@
     "watch": "sph build --watch"
   },
   "sketch-plugin-helper": {
-    "name": "Snap to Grid",
+    "name": "Align to Grid",
     "actions": [
       {
         "action": "LayersMoved.finish",
@@ -32,45 +32,44 @@
       {
         "action": "LayersResized.finish",
         "handler": "action"
-      },
-      {
-        "action": "Paste.finish",
-        "handler": "action"
       }
     ],
     "menu": [
       {
-        "handler": "snap-layers-to-grid/snap-layers-to-grid",
-        "label": "Snap Layers to Grid"
+        "handler": "align-artboards-to-canvas-grid/align-artboards-to-canvas-grid",
+        "label": "Align Artboards to Canvas Grid"
       },
       {
-        "handler": "snap-layers-to-grid/settings",
-        "label": "Settings for Snap Layers to Grid"
-      },
-      "-",
-      {
-        "handler": "snap-artboards-to-grid/snap-artboards-to-grid",
-        "label": "Snap Artboards to Grid"
-      },
-      {
-        "handler": "snap-artboards-to-grid/settings",
-        "label": "Settings for Snap Artboards to Grid"
+        "handler": "align-layers-to-artboard-grid/align-layers-to-artboard-grid",
+        "label": "Align Layers to Artboard Grid"
       },
       "-",
       {
-        "handler": "reset-settings",
-        "label": "Reset Settings"
+        "Settings": [
+          {
+            "handler": "align-artboards-to-canvas-grid/settings",
+            "label": "Canvas Grid Settings"
+          },
+          {
+            "handler": "align-layers-to-artboard-grid/settings",
+            "label": "Artboard Grid Settings"
+          },
+          "-",
+          {
+            "handler": "reset-settings",
+            "label": "Reset Settings"
+          }
+        ]
       }
     ],
     "defaultSettings": {
-      "snapArtboardsToGrid.enabled": false,
-      "snapArtboardsToGrid.gridHeight": 200,
-      "snapArtboardsToGrid.gridWidth": 200,
-      "snapArtboardsToGrid.whitelistRegularExpression": "^@",
-      "snapLayersToGrid.enabled": false,
-      "snapLayersToGrid.gridHeight": 10,
-      "snapLayersToGrid.gridWidth": 10,
-      "snapLayersToGrid.whitelistRegularExpression": "^@"
+      "alignArtboardsToCanvasGrid.snapToGrid": false,
+      "alignArtboardsToCanvasGrid.gridHeight": 200,
+      "alignArtboardsToCanvasGrid.gridWidth": 200,
+      "alignArtboardsToCanvasGrid.whitelistRegularExpression": "^@",
+      "alignLayersToArtboardGrid.snapToGrid": false,
+      "alignLayersToArtboardGrid.gridSize": 10,
+      "alignLayersToArtboardGrid.whitelistRegularExpression": "^@"
     }
   }
 }

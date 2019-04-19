@@ -1,7 +1,8 @@
 import {
   adjustParentGroupsToFit,
   getCoordinatesRelativeToArtboard,
-  getSelectedLayersOrLayersOnCurrentPage,
+  getLayersOnCurrentPage,
+  getSelectedLayers,
   getSettings,
   iterateNestedLayers,
   showSuccessMessage
@@ -9,36 +10,40 @@ import {
 
 import roundDown from '../round-down'
 
-export default function snapLayersToGrid ({ isAction, layers }) {
+export default function alignLayersToArtboardGrid ({ isAction, layers }) {
   const settings = getSettings()
-  const gridWidth = settings['snapLayersToGrid.gridWidth']
-  const gridHeight = settings['snapLayersToGrid.gridHeight']
+  const gridSize = settings['alignLayersToArtboardGrid.gridSize']
   const regularExpression =
-    settings['snapLayersToGrid.whitelistRegularExpression']
+    settings['alignLayersToArtboardGrid.whitelistRegularExpression']
   const whitelistRegularExpression = regularExpression
     ? new RegExp(regularExpression)
     : null
-  layers = layers || getSelectedLayersOrLayersOnCurrentPage()
+  const selectedLayers = getSelectedLayers()
+  const hasSelection = selectedLayers.length > 0
+  layers = layers || (hasSelection ? selectedLayers : getLayersOnCurrentPage())
   iterateNestedLayers(layers, function (layer) {
     if (
       layer.type === 'Artboard' ||
       layer.type === 'Group' ||
+      !layer.getParentArtboard() ||
       (whitelistRegularExpression &&
         whitelistRegularExpression.test(layer.name))
     ) {
       return
     }
-    snapLayerToGrid({ layer, gridWidth, gridHeight })
+    snapLayerToGrid({ layer, gridSize })
   })
   if (!isAction) {
-    showSuccessMessage('Snapped layers to grid')
+    showSuccessMessage(
+      `Aligned ${hasSelection ? 'selection' : 'all layers'} to artboard grid`
+    )
   }
 }
 
-function snapLayerToGrid ({ layer, gridWidth, gridHeight }) {
+function snapLayerToGrid ({ layer, gridSize }) {
   const { x, y } = getCoordinatesRelativeToArtboard(layer)
-  const newX = roundDown({ value: x, multiple: gridWidth })
-  const newY = roundDown({ value: y, multiple: gridHeight })
+  const newX = roundDown({ value: x, multiple: gridSize })
+  const newY = roundDown({ value: y, multiple: gridSize })
   layer.frame.x = layer.frame.x + newX - x
   layer.frame.y = layer.frame.y + newY - y
   adjustParentGroupsToFit(layer)

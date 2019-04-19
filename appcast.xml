@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
-    <title>Snap to Grid</title>
-    <link>https://raw.githubusercontent.com/yuanqing/sketch-snap-to-grid/master/appcast.xml</link>
-    <description>A Sketch plugin to automatically align artboards and layers to a grid</description>
+    <title>Align to Grid</title>
+    <link>https://raw.githubusercontent.com/yuanqing/sketch-align-to-grid/master/appcast.xml</link>
+    <description>A Sketch plugin to align artboards and layers to a grid</description>
     <language>en</language>
     <item>
       <title>v0.0.2</title>
       <description>0.0.2</description>
-      <enclosure url="https://github.com/yuanqing/sketch-snap-to-grid/archive/v0.0.2.zip" sparkle:version="0.0.2"/>
+      <enclosure url="https://github.com/yuanqing/sketch-align-to-grid/archive/v0.0.2.zip" sparkle:version="0.0.2"/>
     </item>
     <item>
       <title>v0.0.1</title>
       <description>0.0.1</description>
-      <enclosure url="https://github.com/yuanqing/sketch-snap-to-grid/archive/v0.0.1.zip" sparkle:version="0.0.1"/>
+      <enclosure url="https://github.com/yuanqing/sketch-align-to-grid/archive/v0.0.1.zip" sparkle:version="0.0.1"/>
     </item>
   </channel>
 </rss>

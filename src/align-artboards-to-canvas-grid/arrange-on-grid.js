@@ -1,6 +1,6 @@
 import roundDown from '../round-down'
 
-export default function createGrid ({ layers, gridWidth, gridHeight }) {
+export default function arrangeOnGrid ({ layers, gridWidth, gridHeight }) {
   const grid = []
   insertLayersIntoGrid({ grid, layersToInsert: layers, gridWidth, gridHeight })
   adjustYPosition({ grid, gridHeight })

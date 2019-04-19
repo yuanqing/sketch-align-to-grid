@@ -1,18 +1,18 @@
 import { fromNative } from 'sketch'
 import { getSettings } from 'sketch-plugin-helper'
 
-import snapArtboardsToGrid from './snap-artboards-to-grid/snap-artboards-to-grid'
-import snapLayersToGrid from './snap-layers-to-grid/snap-layers-to-grid'
+import alignLayersToArtboardGrid from './align-layers-to-artboard-grid/align-layers-to-artboard-grid'
+import alignArtboardsToCanvasGrid from './align-artboards-to-canvas-grid/align-artboards-to-canvas-grid'
 
 export default function action ({ actionContext }) {
   const settings = getSettings()
   const layers = collectLayersInArtboards(actionContext.layers)
   const hasArtboard = layers.length < actionContext.layers.length
-  if (settings['snapArtboardsToGrid.enabled'] && hasArtboard) {
-    snapArtboardsToGrid({ isAction: true })
+  if (settings['alignLayersToArtboardGrid.snapToGrid'] && layers.length > 0) {
+    alignLayersToArtboardGrid({ isAction: true, layers })
   }
-  if (settings['snapLayersToGrid.enabled'] && layers.length > 0) {
-    snapLayersToGrid({ isAction: true, layers })
+  if (settings['alignArtboardsToCanvasGrid.snapToGrid'] && hasArtboard) {
+    alignArtboardsToCanvasGrid({ isAction: true })
   }
 }
 

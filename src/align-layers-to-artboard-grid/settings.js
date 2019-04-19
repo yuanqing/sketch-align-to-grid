@@ -7,27 +7,22 @@ import {
 } from 'sketch-plugin-helper'
 
 const settingsConfig = {
-  title: 'Settings for Snap Artboards to Grid',
+  title: 'Settings for Artboard Grid',
   inputs: [
     {
-      type: CHECK_BOX,
-      key: 'snapArtboardsToGrid.enabled',
-      label: 'Enabled'
-    },
-    {
       type: NUMERIC_TEXT_BOX,
-      key: 'snapArtboardsToGrid.gridWidth',
-      label: 'Grid width'
-    },
-    {
-      type: NUMERIC_TEXT_BOX,
-      key: 'snapArtboardsToGrid.gridHeight',
-      label: 'Grid height'
+      key: 'alignLayersToArtboardGrid.gridSize',
+      label: 'Grid size'
     },
     {
       type: TEXT_BOX,
-      key: 'snapArtboardsToGrid.whitelistRegularExpression',
+      key: 'alignLayersToArtboardGrid.whitelistRegularExpression',
       label: 'Whitelist regular expression'
+    },
+    {
+      type: CHECK_BOX,
+      key: 'alignLayersToArtboardGrid.snapToGrid',
+      label: 'Snap layers to artboard grid'
     }
   ]
 }

@@ -7,27 +7,27 @@ import {
 } from 'sketch-plugin-helper'
 
 const settingsConfig = {
-  title: 'Settings for Snap Layers to Grid',
+  title: 'Settings for Canvas Grid',
   inputs: [
     {
-      type: CHECK_BOX,
-      key: 'snapLayersToGrid.enabled',
-      label: 'Enabled'
-    },
-    {
       type: NUMERIC_TEXT_BOX,
-      key: 'snapLayersToGrid.gridWidth',
+      key: 'alignArtboardsToCanvasGrid.gridWidth',
       label: 'Grid width'
     },
     {
       type: NUMERIC_TEXT_BOX,
-      key: 'snapLayersToGrid.gridHeight',
+      key: 'alignArtboardsToCanvasGrid.gridHeight',
       label: 'Grid height'
     },
     {
       type: TEXT_BOX,
-      key: 'snapLayersToGrid.whitelistRegularExpression',
+      key: 'alignArtboardsToCanvasGrid.whitelistRegularExpression',
       label: 'Whitelist regular expression'
+    },
+    {
+      type: CHECK_BOX,
+      key: 'alignArtboardsToCanvasGrid.snapToGrid',
+      label: 'Snap artboards to canvas grid'
     }
   ]
 }
