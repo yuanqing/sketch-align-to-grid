@@ -7,7 +7,7 @@ import alignArtboardsToCanvasGrid from './align-artboards-to-canvas-grid/align-a
 export default function action ({ actionContext }) {
   const settings = getSettings()
   const layers = collectLayersInArtboards(actionContext.layers)
-  const hasArtboard = layers.length < actionContext.layers.length
+  const hasArtboard = actionContext.layers.length > layers.length
   if (settings['alignLayersToArtboardGrid.snapToGrid'] && layers.length > 0) {
     alignLayersToArtboardGrid({ isAction: true, layers })
   }
