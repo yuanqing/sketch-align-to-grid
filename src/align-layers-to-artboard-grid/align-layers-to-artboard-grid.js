@@ -11,12 +11,11 @@ import {
 import roundDown from '../round-down'
 
 export default function alignLayersToArtboardGrid ({ isAction, layers }) {
-  const settings = getSettings()
-  const gridSize = settings['alignLayersToArtboardGrid.gridSize']
-  const regularExpression =
-    settings['alignLayersToArtboardGrid.whitelistRegularExpression']
-  const whitelistRegularExpression = regularExpression
-    ? new RegExp(regularExpression)
+  const { gridSize, whitelistRegularExpression } = getSettings({
+    keyPrefix: 'alignLayersToArtboardGrid'
+  })
+  const regularExpression = whitelistRegularExpression
+    ? new RegExp(whitelistRegularExpression)
     : null
   const selectedLayers = getSelectedLayers()
   const hasSelection = selectedLayers.length > 0
@@ -26,8 +25,7 @@ export default function alignLayersToArtboardGrid ({ isAction, layers }) {
       layer.type === 'Artboard' ||
       layer.type === 'Group' ||
       !layer.getParentArtboard() ||
-      (whitelistRegularExpression &&
-        whitelistRegularExpression.test(layer.name))
+      (regularExpression && regularExpression.test(layer.name))
     ) {
       return
     }

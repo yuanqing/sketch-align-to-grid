@@ -7,7 +7,7 @@ import {
 } from 'sketch-plugin-helper'
 
 const settingsConfig = {
-  title: 'Settings for Artboard Grid',
+  title: 'Artboard Grid Settings',
   inputs: [
     {
       type: NUMERIC_TEXT_BOX,
