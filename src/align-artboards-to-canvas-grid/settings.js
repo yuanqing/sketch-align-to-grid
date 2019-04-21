@@ -1,13 +1,9 @@
-import {
-  openSettingsDialog,
-  saveSettings,
-  CHECK_BOX,
-  NUMERIC_TEXT_BOX,
-  TEXT_BOX
-} from 'sketch-plugin-helper'
+import { CHECK_BOX, NUMERIC_TEXT_BOX, TEXT_BOX } from 'sketch-plugin-helper'
+
+import settingsFactory from '../settings/settings-factory'
 
 const settingsConfig = {
-  title: 'Canvas Grid Settings',
+  title: 'Settings for Canvas Grid',
   inputs: [
     {
       type: NUMERIC_TEXT_BOX,
@@ -32,9 +28,4 @@ const settingsConfig = {
   ]
 }
 
-export default function settings () {
-  const settings = openSettingsDialog(settingsConfig)
-  if (settings) {
-    saveSettings(settings, { successMessage: 'Settings saved' })
-  }
-}
+export default settingsFactory(settingsConfig)

@@ -7,9 +7,11 @@ import {
 import arrangeOnGrid from './arrange-on-grid'
 
 export default function alignArtboardsToCanvasGrid ({ isAction }) {
-  const { gridHeight, gridWidth, whitelistRegularExpression } = getSettings({
-    keyPrefix: 'alignArtboardsToCanvasGrid'
-  })
+  const {
+    gridHeight,
+    gridWidth,
+    whitelistRegularExpression
+  } = getSettings().alignArtboardsToCanvasGrid
   const layers = getArtboards(whitelistRegularExpression)
   arrangeOnGrid({
     layers,

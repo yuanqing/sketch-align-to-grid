@@ -11,9 +11,10 @@ import {
 import roundDown from '../round-down'
 
 export default function alignLayersToArtboardGrid ({ isAction, layers }) {
-  const { gridSize, whitelistRegularExpression } = getSettings({
-    keyPrefix: 'alignLayersToArtboardGrid'
-  })
+  const {
+    gridSize,
+    whitelistRegularExpression
+  } = getSettings().alignLayersToArtboardGrid
   const regularExpression = whitelistRegularExpression
     ? new RegExp(whitelistRegularExpression)
     : null

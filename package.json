@@ -48,28 +48,32 @@
         "Settings": [
           {
             "handler": "align-artboards-to-canvas-grid/settings",
-            "label": "Canvas Grid Settings"
+            "label": "Settings for Canvas Grid"
           },
           {
             "handler": "align-layers-to-artboard-grid/settings",
-            "label": "Artboard Grid Settings"
+            "label": "Settings for Artboard Grid"
           },
           "-",
           {
-            "handler": "reset-settings",
+            "handler": "settings/reset-settings",
             "label": "Reset Settings"
           }
         ]
       }
     ],
     "defaultSettings": {
-      "alignArtboardsToCanvasGrid.snapToGrid": false,
-      "alignArtboardsToCanvasGrid.gridHeight": 200,
-      "alignArtboardsToCanvasGrid.gridWidth": 200,
-      "alignArtboardsToCanvasGrid.whitelistRegularExpression": "^@",
-      "alignLayersToArtboardGrid.snapToGrid": false,
-      "alignLayersToArtboardGrid.gridSize": 10,
-      "alignLayersToArtboardGrid.whitelistRegularExpression": "^@"
+      "alignArtboardsToCanvasGrid": {
+        "snapToGrid": false,
+        "gridHeight": 200,
+        "gridWidth": 200,
+        "whitelistRegularExpression": "^@"
+      },
+      "alignLayersToArtboardGrid": {
+        "snapToGrid": false,
+        "gridSize": 10,
+        "whitelistRegularExpression": "^@"
+      }
     }
   }
 }

@@ -22,22 +22,22 @@
       "handler": "align-layers-to-artboard-grid/align-layers-to-artboard-grid"
     },
     {
-      "name": "Canvas Grid Settings",
+      "name": "Settings for Canvas Grid",
       "identifier": "yuanqing.sketch-align-to-grid.align-artboards-to-canvas-grid.settings",
       "script": "plugin.js",
       "handler": "align-artboards-to-canvas-grid/settings"
     },
     {
-      "name": "Artboard Grid Settings",
+      "name": "Settings for Artboard Grid",
       "identifier": "yuanqing.sketch-align-to-grid.align-layers-to-artboard-grid.settings",
       "script": "plugin.js",
       "handler": "align-layers-to-artboard-grid/settings"
     },
     {
       "name": "Reset Settings",
-      "identifier": "yuanqing.sketch-align-to-grid.reset-settings",
+      "identifier": "yuanqing.sketch-align-to-grid.settings.reset-settings",
       "script": "plugin.js",
-      "handler": "reset-settings"
+      "handler": "settings/reset-settings"
     },
     {
       "name": "action",
@@ -72,7 +72,7 @@
           "yuanqing.sketch-align-to-grid.align-artboards-to-canvas-grid.settings",
           "yuanqing.sketch-align-to-grid.align-layers-to-artboard-grid.settings",
           "-",
-          "yuanqing.sketch-align-to-grid.reset-settings"
+          "yuanqing.sketch-align-to-grid.settings.reset-settings"
         ]
       }
     ]
