@@ -2,30 +2,37 @@
 
 > A Sketch plugin to align artboards and layers to a grid
 
-## Usage
+![Align Artboards to Canvas Grid](media/align-artboards-to-canvas-grid.gif)
 
-### Align artboards to canvas grid
+## Commands
+
+### Align Artboards to Canvas Grid
 
 - Operates on artboards in the selection, or on all artboards on the current page if the selection is empty
-- Skips certain artboards based on a whitelist regular expression
+- Can be configured to skip certain artboards based on a whitelist regular expression
 
 Settings | Default
 :--|:--
 Grid width (pixels) | `200`
 Grid height (pixels) | `200`
-Whitelist regular expression | `^@`
 Snap to canvas grid | `false`
 
-### Align layers to artboard grid
+### Align Layers to Artboard Grid
 
 - Operates on layers in the selection, or on all layers within artboards on the current page if the selection is empty
-- Skips certain layers based on a whitelist regular expression
+- Can be configured to skip certain layers based on a whitelist regular expression
 
 Settings | Default
 :--|:--
 Grid size (pixels) | `200`
 Whitelist regular expression | `^@`
 Snap to artboard grid | `false`
+
+### Snap to Grid
+
+- The above two commands can be configured such that artboards/layers will snap to the canvas/artboard grid as they are moved
+
+![Snap Artboards to Canvas Grid](media/snap-artboards-to-canvas-grid.gif)
 
 ## Installation
 
