@@ -6,6 +6,11 @@
     <description>A Sketch plugin to align artboards and layers to a grid</description>
     <language>en</language>
     <item>
+      <title>v0.1.0</title>
+      <description>0.1.0</description>
+      <enclosure url="https://github.com/yuanqing/sketch-align-to-grid/archive/v0.1.0.zip" sparkle:version="0.1.0"/>
+    </item>
+    <item>
       <title>v0.0.3</title>
       <description>0.0.3</description>
       <enclosure url="https://github.com/yuanqing/sketch-align-to-grid/archive/v0.0.3.zip" sparkle:version="0.0.3"/>

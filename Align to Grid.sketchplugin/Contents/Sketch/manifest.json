@@ -3,7 +3,7 @@
   "description": "A Sketch plugin to align artboards and layers to a grid",
   "author": "Lim Yuan Qing",
   "homepage": "https://github.com/yuanqing/sketch-align-to-grid",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "identifier": "yuanqing.sketch-align-to-grid",
   "appcast": "https://raw.githubusercontent.com/yuanqing/sketch-align-to-grid/master/appcast.xml",
   "bundleVersion": 1,
