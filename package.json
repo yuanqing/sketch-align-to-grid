@@ -10,6 +10,9 @@
   "license": "MIT",
   "author": "Lim Yuan Qing",
   "repository": "yuanqing/sketch-align-to-grid",
+  "files": [
+    "src"
+  ],
   "scripts": {
     "build": "sph build",
     "fix": "sph lint --fix",
