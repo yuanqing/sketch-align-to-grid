@@ -15,6 +15,7 @@ Settings | Default
 :--|:--
 Grid width (pixels) | `200`
 Grid height (pixels) | `200`
+Whitelist regular expression | `^@`
 Snap to canvas grid | `false`
 
 ### Align Layers to Artboard Grid
@@ -30,7 +31,7 @@ Snap to artboard grid | `false`
 
 ### Snap to Grid
 
-- The above two commands can be configured such that artboards/layers will snap to the canvas/artboard grid as they are moved
+- Enable `Snap to canvas grid` and `Snap to artboard grid` so that artboards/layers will snap to the canvas/artboard grid as they are moved
 
 ![Snap Artboards to Canvas Grid](media/snap-artboards-to-canvas-grid.gif)
 
