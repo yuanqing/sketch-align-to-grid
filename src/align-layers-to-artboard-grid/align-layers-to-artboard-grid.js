@@ -1,6 +1,6 @@
 import {
   adjustParentGroupsToFit,
-  getCoordinatesRelativeToArtboard,
+  calculateCoordinatesRelativeToArtboard,
   getLayersOnCurrentPage,
   getSelectedLayers,
   getSettings,
@@ -40,7 +40,7 @@ export default function alignLayersToArtboardGrid ({ isAction, layers }) {
 }
 
 function snapLayerToGrid ({ layer, gridSize }) {
-  const { x, y } = getCoordinatesRelativeToArtboard(layer)
+  const { x, y } = calculateCoordinatesRelativeToArtboard(layer)
   const newX = roundDown({ value: x, multiple: gridSize })
   const newY = roundDown({ value: y, multiple: gridSize })
   layer.frame.x = layer.frame.x + newX - x
