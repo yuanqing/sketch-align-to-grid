@@ -4,7 +4,7 @@ import {
   getLayersOnCurrentPage,
   getSelectedLayers,
   getSettings,
-  iterateNestedLayers,
+  iterateChildLayers,
   showSuccessMessage
 } from 'sketch-plugin-helper'
 
@@ -21,7 +21,7 @@ export default function alignLayersToArtboardGrid ({ isAction, layers }) {
   const selectedLayers = getSelectedLayers()
   const hasSelection = selectedLayers.length > 0
   layers = layers || (hasSelection ? selectedLayers : getLayersOnCurrentPage())
-  iterateNestedLayers(layers, function (layer) {
+  iterateChildLayers(layers, function (layer) {
     if (
       layer.type === 'Artboard' ||
       layer.type === 'Group' ||
