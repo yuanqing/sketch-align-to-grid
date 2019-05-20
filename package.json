@@ -14,13 +14,16 @@
     "src"
   ],
   "scripts": {
-    "build": "sph build",
-    "fix": "sph lint --fix",
-    "lint": "sph lint",
-    "symlink": "sph symlink",
-    "unlink": "sph symlink --delete",
-    "version": "sph version",
-    "watch": "sph build --watch"
+    "build": "sketch build",
+    "fix": "sketch lint --fix",
+    "handler": "sketch handler",
+    "lint": "sketch lint",
+    "script": "sketch script",
+    "symlink": "sketch symlink",
+    "test": "sketch test",
+    "unlink": "sketch symlink --delete",
+    "version": "sketch version",
+    "watch": "sketch build --watch"
   },
   "devDependencies": {
     "sketch-plugin-helper": "*"
@@ -29,38 +32,38 @@
     "name": "Align to Grid",
     "actions": [
       {
-        "action": "LayersMoved.finish",
-        "handler": "action"
+        "handler": "action",
+        "name": "LayersMoved.finish"
       },
       {
-        "action": "LayersResized.finish",
-        "handler": "action"
+        "handler": "action",
+        "name": "LayersResized.finish"
       }
     ],
     "menu": [
       {
         "handler": "align-artboards-to-canvas-grid/align-artboards-to-canvas-grid",
-        "label": "Align Artboards to Canvas Grid"
+        "name": "Align Artboards to Canvas Grid"
       },
       {
         "handler": "align-layers-to-artboard-grid/align-layers-to-artboard-grid",
-        "label": "Align Layers to Artboard Grid"
+        "name": "Align Layers to Artboard Grid"
       },
       "-",
       {
         "Settings": [
           {
             "handler": "align-artboards-to-canvas-grid/settings",
-            "label": "Settings for Canvas Grid"
+            "name": "Settings for Canvas Grid"
           },
           {
             "handler": "align-layers-to-artboard-grid/settings",
-            "label": "Settings for Artboard Grid"
+            "name": "Settings for Artboard Grid"
           },
           "-",
           {
             "handler": "settings/reset-settings",
-            "label": "Reset Settings"
+            "name": "Reset Settings"
           }
         ]
       }

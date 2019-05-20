@@ -40,8 +40,8 @@
       "handler": "settings/reset-settings"
     },
     {
-      "name": "action",
-      "identifier": "yuanqing.sketch-align-to-grid.action.layers-moved-finish",
+      "name": "LayersMoved.finish",
+      "identifier": "yuanqing.sketch-align-to-grid.layers-moved-finish.layers-moved-finish",
       "script": "plugin.js",
       "handlers": {
         "actions": {
@@ -50,8 +50,8 @@
       }
     },
     {
-      "name": "action",
-      "identifier": "yuanqing.sketch-align-to-grid.action.layers-resized-finish",
+      "name": "LayersResized.finish",
+      "identifier": "yuanqing.sketch-align-to-grid.layers-resized-finish.layers-resized-finish",
       "script": "plugin.js",
       "handlers": {
         "actions": {

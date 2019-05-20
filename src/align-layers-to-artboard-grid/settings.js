@@ -4,7 +4,7 @@ import settingsFactory from '../settings/settings-factory'
 
 const settingsConfig = {
   title: 'Settings for Artboard Grid',
-  inputs: [
+  formFields: [
     {
       type: NUMERIC_TEXT_BOX,
       key: 'alignLayersToArtboardGrid.gridSize',
