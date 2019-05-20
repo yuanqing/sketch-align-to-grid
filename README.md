@@ -1,4 +1,4 @@
-# Align to Grid
+# Align to Grid [![npm Version](https://badgen.net/npm/v/sketch-align-to-grid)](https://www.npmjs.org/package/sketch-align-to-grid)
 
 > A Sketch plugin to align artboards and layers to a grid
 
